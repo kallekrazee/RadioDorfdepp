@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 
 <html>
 
@@ -15,26 +11,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- <script src="js/script_3changePic.js" async defer></script> -->
+  
   </head>
 
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
-    <article id="box01" class="box01">
-      <article id="box02" class="box02_bildoben"></article>
-      <article id="box03" class="box03_bildunten"></article>
-    </article>
+    <img id="bgimage_on" src = "bilder/Radio_01.jpg" class="bgimg01"></img>
 
-    <br><br>
+    <article>  
+      <input type="image" id="but01" class="button_01" name="imgbtn" onclick="toDo()" src="bilder/button_image.jpg"  alt="img button">
+    </article>  
+
+    <audio id="audioplayer" loop='true'> <!-- Remove the "Controls" Attribute if you don't want the visual controls -->
+    </audio>
+
+
+
+<script>
+
+  function toDo(){
+    changePicture(); selectRandom();
+    }
+
+ //The stuff to change the pics
+
+  var xchange = true;
   
-  <article>  
-    <input type="image" id="but01" class="button_01" name="imgbtn" src="bilder/button_image.jpg"  alt="img button">
-  </article>   
-  
-       
-  <script src="js/script.js" async defer></script>
+  function changePicture() {
+    var current = document.getElementById("bgimage_on");
+    if(xchange) {
+      current.src = "bilder/Radio_01.jpg"
+      xchange = false;
+    } else {
+      current.src = "bilder/Radio_02.jpg"
+      xchange = true;
+    }
+  }
+
+//The stuff to change the audiofiles and play them
+
+var lastSong = null;
+var selection = null;
+var playlist = ["sounds/Der Trüffelo.mp3", "sounds/Ehrlicher Erwin.mp3", "sounds/Vegas.mp3"]; // List of songs
+var player = document.getElementById("audioplayer"); // Get audio element
+
+
+player.addEventListener("ended", selectRandom); // Run function when the song ends
+player.autoplay = false;
+
+function selectRandom(){
+    while(selection == lastSong){ // Repeat until a different song is selected
+        selection = Math.floor(Math.random() * playlist.length);
+    }
+    lastSong = selection; // Remember the last song
+    player.src = playlist[selection]; // Tell HTML the location of the new song
+    player.play();
+}
+
+selectRandom(); // Select initial song
+player.play(); // Start song
+
+</script>
+
   
   </body>
 
