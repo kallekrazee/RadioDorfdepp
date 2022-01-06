@@ -1,8 +1,17 @@
-function toDo(){
+  function toDo(){
     changePicture(); selectRandom();
+    
     }
 
- //The stuff to change the pics
+// The Stuff to do it only once 
+   
+   function doItOnce(){
+      var element=document.getElementById("but01");
+      element.onclick = "";
+ }
+
+
+//The stuff to change the pics
 
   var xchange = true;
   
@@ -15,6 +24,7 @@ function toDo(){
       current.src = "bilder/Radio_02.jpg"
       xchange = true;
     }
+   
   }
 
 //The stuff to change the audiofiles and play them
@@ -35,7 +45,9 @@ function selectRandom(){
     lastSong = selection; // Remember the last song
     player.src = playlist[selection]; // Tell HTML the location of the new song
     player.play();
+    
 }
 
 selectRandom(); // Select initial song
 player.play(); // Start song
+
