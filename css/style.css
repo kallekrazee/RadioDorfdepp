@@ -1,22 +1,22 @@
-  body {
-    background-color: black;
-  }
+body {
+  background-color: black;
+}
 
-  .bgimage_on {
-    position: static;
-    width: 1365.5px;
-    height: 766px;
-    background-image: url('../bilder/Radio_01.jpg') ;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 9px 9px;
-    /*background-position: center;*/
-  }
+.bgimage_on {
+  position: static;
+  width: 1365.5px;
+  height: 766px;
+  background-image: url('../bilder/Radio_01.jpg') ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 9px 9px;
+  /*background-position: center;*/
+}
 
-  #but01{
-        /* width: 150px;; */
-        opacity: 0%;;
-        position: absolute;
-        top: 632px;
-        left: 751px;
-  }
+#but01{
+      /* width: 150px;; */
+      opacity: 0%;;
+      position: absolute;
+      top: 632px;
+      left: 751px;
+}

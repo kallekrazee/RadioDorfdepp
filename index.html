@@ -17,13 +17,13 @@
 
   <body>
 
-    <img id="bgimage_on" src = "bilder/Radio_01.jpg" class="bgimg01"></img>
-
-    <article>  
+    <div class="img-wrapper"> 
+      <img id="bgimage_on" src = "bilder/Radio_01.jpg" class="bgimg01"></img> 
+      <div class="img-overlay"></div>
       <input type="image" id="but01" class="imgbutton_01" name="imgbtn" onclick="toDo();" src="bilder/button_image.jpg"  alt="img button">
-    </article>  
+    </div>  
 
-    <audio id="audioplayer" loop='true'> <!-- Remove the "Controls" Attribute if you don't want the visual controls -->
+    <audio id="audioplayer"> <!-- Remove the "Controls" Attribute if you don't want the visual controls -->
     </audio>
   
   </body>
